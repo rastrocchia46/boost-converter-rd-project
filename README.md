@@ -26,17 +26,19 @@ Main project activities include:
 
 ## Main Specifications
 
-| Parameter | Target / Description |
+| Parameter | Value / Description |
 |---|---|
-| Converter topology | Boost converter |
 | Input voltage | 12 V DC |
 | Output voltage | 24 V DC |
-| Control method | Current-mode PWM control |
-| PWM controller | UC3843 |
-| Power switch | N-channel MOSFET |
+| Output current | 2.5 A |
+| Output power | 60 W |
+| Switching frequency | 62 kHz |
+| Switching period | 16.13 µs |
+| Duty cycle | 50% |
+| On-time | 8.065 µs |
+| Inductor current ripple | 2 A |
+| Output voltage ripple target | < 100 mV |
 | Magnetic component | Custom inductor |
-| PCB type | Custom PCB prototype |
-| Main analysis | Electrical performance, thermal behaviour and efficiency |
 
 ---
 
