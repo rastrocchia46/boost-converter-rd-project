@@ -42,27 +42,69 @@ Main project activities include:
 
 ---
 
-## Repository Structure
+## Converter Architecture
 
-```text
-boost-converter-rd-project/
-│
-├── README.md
-│
-├── docs/
-│   └── Project documentation and schematic files
-│
-├── images/
-│   └── PCB layout and 3D render images
-│
-├── hardware/
-│   └── Hardware design files
-│
-├── simulations/
-│   └── Simulation files and results
-│
-├── bom/
-│   └── Bill of materials
-│
-└── reports/
-    └── Technical reports and project documentation
+The power stage includes: input protection section, input capacitor bank, custom-designed inductor, power MOSFET, Schottky rectifier diode and an output capacitor bank.
+
+The control stage is based on the UC3843 current-mode PWM controller. The controller drives the MOSFET gate and regulates the output voltage through a feedback network. The current sensing network provides the controller with information about the switch current, enabling current-mode operation and cycle-by-cycle current control.
+
+---
+
+
+## Schematic
+
+The electrical schematic of the Boost converter is available in the documentation folder:
+
+[Open schematic PDF](docs/Schematic%20Boost%20Converter.pdf)
+
+---
+
+## PCB Layout
+
+The PCB was designed as a custom prototype board for practical validation of the converter. Particular attention was given to the placement of the main power components, current paths, input/output capacitor positioning and test-point accessibility. The main power path was routed with wide copper areas to reduce resistive losses and improve current handling. The inductor, MOSFET, Schottky diode and output capacitors were placed to keep the high-current switching loop as compact as possible.
+
+### Front PCB Layout
+
+![Front PCB Layout](images/Front%20-%20Boost%20Converter.png)
+
+### Rear PCB Layout
+
+![Rear PCB Layout](images/Rear%20-%20Boost%20Converter.png)
+
+### 3D PCB View
+
+![3D PCB Layout](images/3D%20layout%20-%20Boost%20Converter.png)
+
+---
+
+## Custom Inductor
+
+A key part of the project is the design and construction of a custom magnetic component for the Boost converter. The inductor was designed according to the required current ripple, switching frequency and output power of the converter.
+
+The inductor design process includes:
+
+- Calculation of the required inductance
+- Selection of the magnetic core
+- Evaluation of saturation limits
+- Definition of the number of turns
+- Consideration of copper losses
+- Practical winding and assembly of the magnetic component
+
+The custom inductor will also be evaluated during prototype testing, with attention to thermal behaviour and its influence on converter efficiency.
+
+---
+
+## Authors
+
+**Raffaele Strocchia**  
+**Salvatore Turboli**
+**Domenico Fiorinelli**
+MSc Electronic Engineering students  
+Double Degree Program  
+University of Naples Federico II / Lodz University of Technology
+
+---
+
+This repository is part of an academic R&D project and is intended to document the engineering workflow followed during the development of the converter.
+
+Further updates will be added after PCB manufacturing, assembly and prototype testing.
