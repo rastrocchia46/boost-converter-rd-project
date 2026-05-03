@@ -12,8 +12,6 @@ The goal of this project is to design and build a functional Boost converter pro
 
 Main project activities include:
 
-- Review of common switch-mode power converter topologies
-- Selection of the Boost converter topology
 - Definition of electrical specifications
 - Component selection and sizing
 - Design of the control stage based on a current-mode PWM controller
